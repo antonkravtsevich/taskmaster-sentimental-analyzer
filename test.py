@@ -20,7 +20,7 @@ class TestSentimentProcessing(unittest.TestCase):
     def test_negative(self):
         text = 'ugly bad worse aufull terrible'
         result = sp.get_polarity(text)
-        self.assertGreater(result, 0)
+        self.assertLess(result, 0)
 
 
 if __name__ == '__main__':
