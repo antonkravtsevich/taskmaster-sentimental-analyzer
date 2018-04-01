@@ -1,5 +1,5 @@
 import unittest
-import sentiment_processing as sp
+import src.sentiment_processing as sp
 
 class TestSentimentProcessing(unittest.TestCase):
 
