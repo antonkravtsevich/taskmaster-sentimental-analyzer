@@ -15,4 +15,4 @@ notifications:
   email: false
 
 after_success:
-  - sh ./travis/deploy_dockerhub.sh
+  - sh .travis/deploy_dockerhub.sh
