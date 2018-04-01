@@ -1,7 +1,7 @@
 #!/bin/sh
 echo Build docker container
 
-docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+docker login -u $DOCKER_USER -p $DOCKER_PASS
 
 echo Docker username: $(docker info | sed '/Username:/!d;s/.* //')
 
