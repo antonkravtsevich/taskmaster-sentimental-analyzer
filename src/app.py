@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from flask_corse import CORS
+from flask_cors import CORS
 import sentiment_processing as sp
 from temp_storage import TempStorage
 from datetime import datetime
