@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, request
+from flask_corse import CORS
 import sentiment_processing as sp
 from temp_storage import TempStorage
 from datetime import datetime
 
 app = Flask(__name__)
+CORS(app)
 startTime = datetime.now()
 tp = TempStorage()
 
