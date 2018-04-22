@@ -1,13 +1,11 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sentiment_processing as sp
-from temp_storage import TempStorage
 from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
 startTime = datetime.now()
-tp = TempStorage()
 
 @app.route('/', methods=['POST'])
 def index():
@@ -20,8 +18,7 @@ def index():
 @app.route('/status', methods=['GET'])
 def get_status():
     currTime = datetime.now()
-    response = 'Uptime: {}<br><br>'.format(currTime - startTime)
-    response += str(tp)
+    response = 'Uptime: {}'.format(currTime - startTime)
     return(response)
 
 
