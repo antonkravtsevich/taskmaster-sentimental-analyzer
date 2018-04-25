@@ -7,12 +7,12 @@ app = Flask(__name__)
 CORS(app)
 startTime = datetime.now()
 
+
 @app.route('/', methods=['POST'])
 def index():
     json = request.get_json(silent=True)
     polarity = sp.get_polarity(json['raw_text'])
-    tp.add_new_record(text=json['raw_text'], polarity=polarity)
-    return(jsonify({'status':'ok', 'polarity':polarity}), 200)
+    return(jsonify({'status': 'ok', 'polarity': polarity}), 200)
 
 
 @app.route('/status', methods=['GET'])
