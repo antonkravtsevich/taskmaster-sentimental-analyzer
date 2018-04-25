@@ -1,15 +1,16 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import sentiment_processing as sp
+from sentiment_processing import SentimentProcessor
 from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
 startTime = datetime.now()
+sp = SentimentProcessor()
 
 
-@app.route('/', methods=['POST'])
-def index():
+@app.route('/get_polarity', methods=['POST'])
+def get_polarity():
     json = request.get_json(silent=True)
     polarity = sp.get_polarity(json['raw_text'])
     return(jsonify({'status': 'ok', 'polarity': polarity}), 200)

@@ -1,6 +1,11 @@
 from textblob import TextBlob
 
-# using simple textblob analyz to return sentiment info
-def get_polarity(text):
-    analyzis = TextBlob(text)
-    return analyzis.sentiment.polarity
+
+class SentimentProcessor:
+
+    def __init__(self):
+        pass
+
+    def get_polarity(self, text):
+        analyzis = TextBlob(text)
+        return analyzis.sentiment.polarity
